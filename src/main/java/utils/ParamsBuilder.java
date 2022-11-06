@@ -2,8 +2,10 @@ package utils;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.codec.binary.Base32;
 import params.*;
 
+import java.util.Base64;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -66,5 +68,20 @@ public class ParamsBuilder {
     public final ParamsBuilder setVersion(Version version) {
         add(version);
         return this;
+    }
+
+    /**
+     * converts all the valid params into a string encoded in base 64
+     */
+    public String getBase64String() {
+        StringBuilder sb = new StringBuilder();
+        params.forEach(p -> {
+            if (p.isValid())
+                sb.append(p + "&");
+        });
+        //
+        return Base64
+                .getEncoder()
+                .encodeToString(sb.substring(0, sb.length() - 1).getBytes());
     }
 }
