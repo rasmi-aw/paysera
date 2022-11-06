@@ -17,12 +17,17 @@ import lombok.NoArgsConstructor;
 public class CallbackURL extends Param {
 
     @Override
-    String name() {
+    public String name() {
         return "callbackurl";
     }
 
     @Override
-    boolean isValid() {
+    public boolean isRequired() {
+        return true;
+    }
+
+    @Override
+    public boolean isValid() {
         return getValue() != null && !getValue().isEmpty() && getValue().length() <= 255;
     }
 }

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Random;
+
 /**
  * @author Abdelwadoud Rasmi
  * A param model
@@ -20,12 +22,17 @@ public abstract class Param {
     /**
      * Param name, and it has to be different from a param to another
      */
-    abstract String name();
+    public abstract String name();
 
     /**
      * To check if the param value is valid or not (length, format etc...)
      */
-    abstract boolean isValid();
+    public abstract boolean isValid();
+
+    /**
+     * If a param is required or not
+     */
+    public abstract boolean isRequired();
 
     @Override
     public String toString() {
@@ -37,5 +44,10 @@ public abstract class Param {
         return obj != null &&
                 obj instanceof Param &&
                 ((Param) obj).name().equals(name());
+    }
+
+    @Override
+    public int hashCode() {
+        return name().length() * 3 + value.length() * 2 + new Random().nextInt();
     }
 }

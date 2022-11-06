@@ -12,12 +12,17 @@ import lombok.NoArgsConstructor;
 public class ProjectId extends Param {
 
     @Override
-    String name() {
+    public String name() {
         return "projectid";
     }
 
     @Override
-    boolean isValid() {
+    public boolean isRequired() {
+        return true;
+    }
+
+    @Override
+    public boolean isValid() {
         return getValue() != null && getValue().isEmpty() && getValue().length() <= 11;
     }
 }
