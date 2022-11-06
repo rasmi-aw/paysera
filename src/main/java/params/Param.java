@@ -1,4 +1,4 @@
-package utils;
+package params;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,6 +29,6 @@ public abstract class Param {
 
     @Override
     public String toString() {
-        return name().trim() + "=" + value;
+        return name().trim() + "=" + value.trim();
     }
 }
