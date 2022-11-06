@@ -5,20 +5,20 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Abdelwadoud Rasmi
- * <p>
- * Full address (URL), to which the client is redirected after a successful payment.
+ * The version number of Paysera system specification (API)
  */
 @AllArgsConstructor
 @NoArgsConstructor
-public class AcceptURL extends Param {
+public class Version extends Param {
+
 
     @Override
     String name() {
-        return "accepturl";
+        return "version";
     }
 
     @Override
     boolean isValid() {
-        return getValue() != null && !getValue().isEmpty() && getValue().length() <= 255;
+        return getValue() != null && !getValue().isEmpty() && getValue().length() <= 9;
     }
 }

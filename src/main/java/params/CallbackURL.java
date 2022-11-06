@@ -1,5 +1,8 @@
 package params;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 /**
  * @author Abdelwadoud Rasmi
  * <p>
@@ -9,6 +12,8 @@ package params;
  * If there is no answer "OK", the message will be sent 4 times (when we get it, after an hour,
  * after three hours and after 24 hours).
  */
+@AllArgsConstructor
+@NoArgsConstructor
 public class CallbackURL extends Param {
 
     @Override
