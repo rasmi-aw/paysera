@@ -19,6 +19,10 @@ public abstract class Param {
     @Setter
     private String value;
 
+    @Getter
+    @Setter
+    private boolean required;
+
     /**
      * Param name, and it has to be different from a param to another
      */
@@ -29,10 +33,6 @@ public abstract class Param {
      */
     public abstract boolean isValid();
 
-    /**
-     * If a param is required or not
-     */
-    public abstract boolean isRequired();
 
     @Override
     public String toString() {

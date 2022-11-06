@@ -17,11 +17,6 @@ public class ProjectId extends Param {
     }
 
     @Override
-    public boolean isRequired() {
-        return true;
-    }
-
-    @Override
     public boolean isValid() {
         return getValue() != null && getValue().isEmpty() && getValue().length() <= 11;
     }
