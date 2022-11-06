@@ -18,6 +18,6 @@ public class OrderId extends Param {
 
     @Override
     boolean isValid() {
-        return getValue() != null && getValue().isEmpty() && getValue().length() <= 40;
+        return getValue() != null && !getValue().isEmpty() && getValue().length() <= 40;
     }
 }
