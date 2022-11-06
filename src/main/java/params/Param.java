@@ -31,4 +31,11 @@ public abstract class Param {
     public String toString() {
         return name().trim() + "=" + value.trim();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj != null &&
+                obj instanceof Param &&
+                ((Param) obj).name().equals(name());
+    }
 }
