@@ -1,7 +1,6 @@
 package params.checkout;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
@@ -10,7 +9,6 @@ import params.Param;
  * Full address (URL), to which the client is redirected after he clicks the link to return to the shop.
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class CancelURL extends Param {
 
     @Override

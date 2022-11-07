@@ -1,7 +1,6 @@
 package params.checkout;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
@@ -9,7 +8,6 @@ import params.Param;
  * Order unique id from your system
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class OrderId extends Param {
 
     @Override

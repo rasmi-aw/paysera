@@ -1,7 +1,6 @@
 package params.checkout;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
@@ -10,7 +9,6 @@ import params.Param;
  * Full address (URL), to which the client is redirected after a successful payment.
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class AcceptURL extends Param {
 
     @Override

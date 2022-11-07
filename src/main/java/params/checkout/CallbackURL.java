@@ -14,7 +14,6 @@ import params.Param;
  * after three hours and after 24 hours).
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class CallbackURL extends Param {
 
     @Override

@@ -1,7 +1,6 @@
 package params.checkout;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
@@ -9,7 +8,6 @@ import params.Param;
  * The country you're sending money from
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class Country extends Param {
 
     @Override

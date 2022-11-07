@@ -2,7 +2,6 @@ package params.checkout;
 
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
@@ -10,7 +9,6 @@ import params.Param;
  * If this is a test request or not
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class Test extends Param {
 
     @Override

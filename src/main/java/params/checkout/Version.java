@@ -1,7 +1,6 @@
 package params.checkout;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
@@ -9,7 +8,6 @@ import params.Param;
  * The version number of Paysera system specification (API)
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class Version extends Param {
 
     @Override

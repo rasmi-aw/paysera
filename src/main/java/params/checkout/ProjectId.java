@@ -1,7 +1,6 @@
 package params.checkout;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
@@ -9,7 +8,6 @@ import params.Param;
  * Project unique id from your paysera project
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class ProjectId extends Param {
 
     @Override

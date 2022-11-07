@@ -1,7 +1,6 @@
 package params.checkout;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
@@ -9,7 +8,6 @@ import params.Param;
  * The currency you want to send money in
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class Currency extends Param {
 
     @Override

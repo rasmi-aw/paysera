@@ -9,7 +9,6 @@ import params.Param;
  * The amount you want to send
  */
 @AllArgsConstructor
-@NoArgsConstructor
 public class Amount extends Param {
 
     @Override
