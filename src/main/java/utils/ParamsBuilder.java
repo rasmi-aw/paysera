@@ -1,12 +1,12 @@
 package utils;
 
 import lombok.Getter;
-import lombok.Setter;
-import org.apache.commons.codec.binary.Base32;
 import params.*;
+import params.checkout.*;
 
 import java.util.Base64;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -40,8 +40,22 @@ public class ParamsBuilder {
         return this;
     }
 
+    public final ParamsBuilder addAll(List<Param> params) {
+        if (params != null) {
+            params.forEach(param -> {
+                add(param);
+            });
+        }
+        return this;
+    }
+
     public final ParamsBuilder setAcceptUrl(AcceptURL acceptURL) {
         add(acceptURL);
+        return this;
+    }
+
+    public final ParamsBuilder setAmount(Amount amount) {
+        add(amount);
         return this;
     }
 
@@ -55,6 +69,16 @@ public class ParamsBuilder {
         return this;
     }
 
+    public final ParamsBuilder setCountry(Country country) {
+        add(country);
+        return this;
+    }
+
+    public final ParamsBuilder setCurrency(Currency currency) {
+        add(currency);
+        return this;
+    }
+
     public final ParamsBuilder setOrderId(OrderId orderId) {
         add(orderId);
         return this;
@@ -62,6 +86,16 @@ public class ParamsBuilder {
 
     public final ParamsBuilder setProjectId(ProjectId projectId) {
         add(projectId);
+        return this;
+    }
+
+    public final ParamsBuilder setProjectPassword(ProjectPassword password) {
+        add(password);
+        return this;
+    }
+
+    public final ParamsBuilder setTests(Test test) {
+        add(test);
         return this;
     }
 
@@ -84,6 +118,8 @@ public class ParamsBuilder {
         //
         return Base64
                 .getEncoder()
-                .encodeToString(sb.substring(0, sb.length() - 1).getBytes());
+                .encodeToString(sb.substring(0, sb.length() - 1).getBytes())
+                .replace("/", "_")
+                .replace("+", "-");
     }
 }

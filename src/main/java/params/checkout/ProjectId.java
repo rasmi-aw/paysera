@@ -1,15 +1,18 @@
-package params;
+package params.checkout;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import params.Param;
 
 /**
  * @author Abdelwadoud Rasmi
  * Project unique id from your paysera project
  */
-@AllArgsConstructor
 @NoArgsConstructor
 public class ProjectId extends Param {
+
+    public ProjectId(String value) {
+        super(value);
+    }
 
     @Override
     public String name() {
@@ -18,6 +21,6 @@ public class ProjectId extends Param {
 
     @Override
     public boolean isValid() {
-        return getValue() != null && getValue().isEmpty() && getValue().length() <= 11;
+        return getValue() != null && !getValue().isEmpty() && getValue().length() <= 11;
     }
 }

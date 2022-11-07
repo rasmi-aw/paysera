@@ -1,20 +1,23 @@
-package params;
+package params.checkout;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import params.Param;
 
 /**
  * @author Abdelwadoud Rasmi
  * <p>
- * Full address (URL), to which the client is redirected after he clicks the link to return to the shop.
+ * Full address (URL), to which the client is redirected after a successful payment.
  */
-@AllArgsConstructor
 @NoArgsConstructor
-public class CancelURL extends Param {
+public class AcceptURL extends Param {
+
+    public AcceptURL(String value) {
+        super(value);
+    }
 
     @Override
     public String name() {
-        return "cancelurl";
+        return "accepturl";
     }
 
     @Override

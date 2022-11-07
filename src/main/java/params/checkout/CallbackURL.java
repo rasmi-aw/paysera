@@ -1,7 +1,7 @@
-package params;
+package params.checkout;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import params.Param;
 
 /**
  * @author Abdelwadoud Rasmi
@@ -12,9 +12,12 @@ import lombok.NoArgsConstructor;
  * If there is no answer "OK", the message will be sent 4 times (when we get it, after an hour,
  * after three hours and after 24 hours).
  */
-@AllArgsConstructor
 @NoArgsConstructor
 public class CallbackURL extends Param {
+
+    public CallbackURL(String value) {
+        super(value);
+    }
 
     @Override
     public String name() {
