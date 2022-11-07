@@ -6,6 +6,7 @@ import params.checkout.*;
 
 import java.util.Base64;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -35,6 +36,15 @@ public class ParamsBuilder {
         if (param != null && param.isValid()) {
             params.remove(param);
             params.add(param);
+        }
+        return this;
+    }
+
+    public final ParamsBuilder addAll(List<Param> params) {
+        if (params != null) {
+            params.forEach(param -> {
+                add(param);
+            });
         }
         return this;
     }
