@@ -20,6 +20,6 @@ public class ProjectPassword  extends Param {
 
     @Override
     public boolean isValid() {
-        return getValue() != null && g!etValue().isEmpty();
+        return getValue() != null && getValue().isEmpty();
     }
 }
