@@ -78,6 +78,8 @@ public class ParamsBuilder {
         params.forEach(p -> {
             if (p.isValid())
                 sb.append(p + "&");
+            else if (p.isRequired())
+                throw
         });
         //
         return Base64
