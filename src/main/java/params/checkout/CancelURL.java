@@ -1,7 +1,8 @@
-package params;
+package params.checkout;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import params.Param;
 
 /**
  * @author Abdelwadoud Rasmi

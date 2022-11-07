@@ -21,7 +21,7 @@ public abstract class Param {
 
     @Getter
     @Setter
-    private boolean required;
+    private boolean required = true;
 
     /**
      * Param name, and it has to be different from a param to another

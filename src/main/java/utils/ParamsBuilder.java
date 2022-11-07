@@ -1,9 +1,8 @@
 package utils;
 
 import lombok.Getter;
-import lombok.Setter;
-import org.apache.commons.codec.binary.Base32;
 import params.*;
+import params.checkout.*;
 
 import java.util.Base64;
 import java.util.HashSet;
