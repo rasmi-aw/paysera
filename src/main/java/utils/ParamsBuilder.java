@@ -44,6 +44,11 @@ public class ParamsBuilder {
         return this;
     }
 
+    public final ParamsBuilder setAmount(Amount amount) {
+        add(amount);
+        return this;
+    }
+
     public final ParamsBuilder setCallbackUrl(CallbackURL callbackUrl) {
         add(callbackUrl);
         return this;
@@ -54,6 +59,16 @@ public class ParamsBuilder {
         return this;
     }
 
+    public final ParamsBuilder setCountry(Country country) {
+        add(country);
+        return this;
+    }
+
+    public final ParamsBuilder setCurrency(Currency currency) {
+        add(currency);
+        return this;
+    }
+
     public final ParamsBuilder setOrderId(OrderId orderId) {
         add(orderId);
         return this;
@@ -61,6 +76,16 @@ public class ParamsBuilder {
 
     public final ParamsBuilder setProjectId(ProjectId projectId) {
         add(projectId);
+        return this;
+    }
+
+    public final ParamsBuilder setProjectPassword(ProjectPassword password) {
+        add(password);
+        return this;
+    }
+
+    public final ParamsBuilder setTests(Test test) {
+        add(test);
         return this;
     }
 
@@ -81,6 +106,8 @@ public class ParamsBuilder {
         //
         return Base64
                 .getEncoder()
-                .encodeToString(sb.substring(0, sb.length() - 1).getBytes());
+                .encodeToString(sb.substring(0, sb.length() - 1).getBytes())
+                .replace("/", "_")
+                .replace("+", "-");
     }
 }
