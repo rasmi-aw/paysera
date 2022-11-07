@@ -1,6 +1,5 @@
 package params;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,7 +10,6 @@ import java.util.Random;
  * @author Abdelwadoud Rasmi
  * A param model
  */
-@AllArgsConstructor
 @NoArgsConstructor
 public abstract class Param {
 
@@ -23,6 +21,15 @@ public abstract class Param {
     @Setter
     private boolean required = true;
 
+    public Param(String value) {
+        this.value = value;
+    }
+
+    public Param(String value, boolean required) {
+        this.value = value;
+        this.required = required;
+    }
+
     /**
      * Param name, and it has to be different from a param to another
      */
@@ -32,7 +39,6 @@ public abstract class Param {
      * To check if the param value is valid or not (length, format etc...)
      */
     public abstract boolean isValid();
-
 
     @Override
     public String toString() {

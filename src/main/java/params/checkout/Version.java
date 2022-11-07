@@ -1,14 +1,18 @@
 package params.checkout;
 
-import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
  * @author Abdelwadoud Rasmi
  * The version number of Paysera system specification (API)
  */
-@AllArgsConstructor
+@NoArgsConstructor
 public class Version extends Param {
+
+    public Version(String value) {
+        super(value);
+    }
 
     @Override
     public String name() {

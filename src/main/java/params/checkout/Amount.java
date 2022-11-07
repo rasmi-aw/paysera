@@ -1,6 +1,5 @@
 package params.checkout;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import params.Param;
 
@@ -8,8 +7,12 @@ import params.Param;
  * @author Abdelwadoud Rasmi
  * The amount you want to send
  */
-@AllArgsConstructor
+@NoArgsConstructor
 public class Amount extends Param {
+
+    public Amount(String value) {
+        super(value);
+    }
 
     @Override
     public String name() {

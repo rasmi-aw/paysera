@@ -1,15 +1,19 @@
 package params.checkout;
 
 
-import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
  * @author Abdelwadoud Rasmi
  * If this is a test request or not
  */
-@AllArgsConstructor
+@NoArgsConstructor
 public class Test extends Param {
+
+    public Test(String value) {
+        super(value);
+    }
 
     @Override
     public String name() {

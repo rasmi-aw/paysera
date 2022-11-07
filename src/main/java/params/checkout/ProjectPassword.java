@@ -1,6 +1,6 @@
 package params.checkout;
 
-import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import params.Param;
 
 
@@ -8,8 +8,12 @@ import params.Param;
  * @author Abdelwadoud Rasmi
  * Project password from your paysera project
  */
-@AllArgsConstructor
+@NoArgsConstructor
 public class ProjectPassword  extends Param {
+
+    public ProjectPassword(String value) {
+        super(value);
+    }
 
     @Override
     public String name() {

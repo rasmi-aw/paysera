@@ -1,9 +1,11 @@
 package utils;
 
+import params.Param;
+import params.checkout.*;
+
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
+import java.util.List;
 
 /**
  * @author Abdelwadoud Rasmi
@@ -27,12 +29,41 @@ public class Request {
     /**
      * Send a request and retrieve the response
      */
-    public String sendRequest() {
+    public String sendRequest(AcceptURL acceptURL,
+                              Amount amount,
+                              CallbackURL callbackURL,
+                              CancelURL cancelURL,
+                              Country country,
+                              Currency currency,
+                              OrderId orderId,
+                              ProjectId projectId,
+                              ProjectPassword password,
+                              Test test,
+                              Version version,
+                              List<Param> params) {
         HttpURLConnection connection;
+        //
         try {
-            connection = ((HttpURLConnection) new URL(url).openConnection());
+            //Building request param
+            String encodedParams = ParamsBuilder
+                    .get()
+                    .addAll(params)
+                    .setAcceptUrl(acceptURL)
+                    .setAmount(amount)
+                    .setCallbackUrl(callbackURL)
+                    .setCancelUrl(cancelURL)
+                    .setCountry(country)
+                    .setCurrency(currency)
+                    .setOrderId(orderId)
+                    .setProjectId(projectId)
+                    .setProjectPassword(password)
+                    .setTests(test)
+                    .setVersion(version)
+                    .getBase64String();
+            //
+            connection = ((HttpURLConnection) new URL(url + encodedParams).openConnection());
             int code = connection.getResponseCode();
-            System.out.println("code, " + code);
+            System.out.println("code, " + code + connection.getResponseMessage());
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {

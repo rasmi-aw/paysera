@@ -1,14 +1,18 @@
 package params.checkout;
 
-import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
  * @author Abdelwadoud Rasmi
  * The country you're sending money from
  */
-@AllArgsConstructor
+@NoArgsConstructor
 public class Country extends Param {
+
+    public Country(String value) {
+        super(value);
+    }
 
     @Override
     public String name() {

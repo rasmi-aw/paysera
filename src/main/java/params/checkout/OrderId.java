@@ -1,14 +1,18 @@
 package params.checkout;
 
-import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import params.Param;
 
 /**
  * @author Abdelwadoud Rasmi
  * Order unique id from your system
  */
-@AllArgsConstructor
+@NoArgsConstructor
 public class OrderId extends Param {
+
+    public OrderId(String value) {
+        super(value);
+    }
 
     @Override
     public String name() {
